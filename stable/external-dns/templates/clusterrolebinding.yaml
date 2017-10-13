@@ -12,5 +12,5 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: {{ template "external-dns.fullname" . }}
-    namespace: {{ .Release.Namespace }}
+    namespace: {{ .Values.Namespace }}
 {{- end -}}

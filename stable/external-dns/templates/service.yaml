@@ -11,6 +11,7 @@ metadata:
     heritage: {{ .Release.Service }}
     release: {{ .Release.Name }}
   name: {{ template "external-dns.fullname" . }}
+  namespace: {{ default "" .Values.Namespace  }}
 spec:
   clusterIP: "{{ .Values.service.clusterIP }}"
 {{- if .Values.service.externalIPs }}
